@@ -56,7 +56,7 @@ int main() {
             ref_flat.push_back(ref[r][c]);
         }
 
-    // bool ok = compare_tensors(out_flat, ref_flat, "TEST Modele Complet (vitis_top, local g++)");
+    
     
     bool ok = compare_tensors(out_flat, ref_flat, "TEST Modele Complet (vitis_top, local g++)", 1.5f);
     return ok ? 0 : 1;
