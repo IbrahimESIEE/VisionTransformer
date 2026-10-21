@@ -45,9 +45,6 @@ def main():
         in_channels=IN_CHANNELS,
     )
 
-    # [MODIF Claude 2026-07-15] On CHARGE les poids entraines au lieu de garder
-    # l'init aleatoire (seed 42). load_state_dict verifie que l'architecture
-    # (dims, num_blocks) correspond au checkpoint -> erreur claire sinon.
     ckpt = torch.load(CHECKPOINT, map_location="cpu")
     state = ckpt["model_state_dict"] if isinstance(ckpt, dict) and "model_state_dict" in ckpt else ckpt
     model.load_state_dict(state)
