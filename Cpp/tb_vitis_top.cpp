@@ -17,7 +17,7 @@ void vitis_top(const data_t* image_in, const data_t* weights_in, data_t* depth_o
 
 
 #ifndef DATA_DIR
-#define DATA_DIR "D:/Devoir/Stage1/transformer/transformerCodeCppv2/hls_export/"
+#define DATA_DIR "D:/Devoir/Stage1/transformer/transformerCodeCppv2/hls_export/" //à modifier, bien choisir le chemin d'accès
 #endif
 
 
