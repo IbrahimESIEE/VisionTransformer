@@ -6,7 +6,6 @@
 
 
 
-// ===== [AJOUT] Memes prototypes, mais en data_t =====
 void layer_norm(const data_t* input, const data_t* gamma, const data_t* beta, data_t* output, int dim);
 void relu(data_t* x, int size);
 void matmul(const data_t* A, const data_t* B, data_t* C, int M, int K, int N); // C = A(MxK) @ B(KxN)
