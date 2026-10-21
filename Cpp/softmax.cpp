@@ -1,11 +1,7 @@
 #include "softmax.h"
 #include <math.h>
 
-// L'exponentielle (expf) se calcule TOUJOURS en float : c'est plus sur et
-// plus precis que de faire un exp en virgule fixe. On lit les data_t en les
-// castant en float, et on ne stocke qu'a la fin dans le tableau data_t.
 
-// void softmax_float(const float* input, float* output, int size) {
 void softmax_float(const data_t* input, data_t* output, int size) {   // [AJOUT] data_t
 #if ARCH == ARCH_PIPELINE
     #pragma HLS INLINE   // [MULTI-ARCH] fondu dans chaque etage (DATAFLOW interdit le partage)
