@@ -1,33 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-// ============================================================
-//  TYPE DE DONNEES COMMUTABLE (float <-> virgule fixe)
-//  -------------------------------------------------------
-//  UN SEUL interrupteur pour tout le projet : USE_FIXED_POINT.
-//
-//    USE_FIXED_POINT 0  ->  data_t = float
-//                           => comportement STRICTEMENT identique
-//                              a la version d'origine. C'est ton
-//                              "filet de securite" : tu ne perds rien.
-//
-//    USE_FIXED_POINT 1  ->  data_t = ap_fixed<16, 6>
-//                           => version quantifiee (virgule fixe 16 bits :
-//                              6 bits avant la virgule = portee +/-32,
-//                              10 bits apres = resolution ~0.001).
-//                           AP_RND  : arrondi (plus precis que la troncature)
-//                           AP_SAT  : saturation (evite l'explosion en cas
-//                                     de depassement au lieu de "wrap around").
-//
-//  DEMARCHE : laisse a 0, verifie que tout compile et que la csim passe.
-//  Puis passe a 1, relance la csim et REGARDE "erreur max absolue".
-//  Tant qu'elle reste petite, tu peux reduire les bits (16 -> 12 -> 10 -> 8)
-//  en changeant seulement la ligne ap_fixed ci-dessous.
-//
-//  IMPORTANT : quand tu passes a 1, REGENERE params.h :
-//      python generate_params_h.py
-//  (pour que le tableau WEIGHTS[] soit lui aussi en data_t).
-// ============================================================
+
 
 #define USE_FIXED_POINT 1   // <-- 0 = float (defaut sur) | 1 = ap_fixed (quantifie)
 
