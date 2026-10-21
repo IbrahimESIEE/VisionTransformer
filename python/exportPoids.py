@@ -5,9 +5,6 @@ import torch
 
 from transformer import DepthTransformer, attention
 
-# ------------------------------------------------------------------
-# 1. Configuration du mini-modele ("Petit")
-# ------------------------------------------------------------------
 IMAGE_SIZE = 64
 PATCH_SIZE = 16
 EMBED_DIM = 32
