@@ -1,23 +1,3 @@
-"""
-export.py
-=========
-[MODIF Claude 2026-07-15] Instancie le mini DepthTransformer et charge les POIDS
-ENTRAINES (checkpoints/last.pth, entraine sur RunPod) au lieu de poids aleatoires.
-(Avant : poids ALEATOIRES seed 42, juste pour valider que le C++ HLS calcule
-exactement la meme chose que PyTorch.)
-Exporte deux choses dans hls_export/ :
-
-  weights/     -> tous les poids du modele, un fichier texte par tenseur
-  reference/   -> pour UNE image de test fixe, la sortie de CHAQUE sous-bloc
-                  (patch embedding, Q/K/V par tete, sortie attention, feedforward,
-                  norm, sortie finale...). C'est la "verite terrain" que chaque
-                  testbench C++ devra reproduire.
-
-Format des fichiers texte (simple a parser en C++ avec ifstream) :
-  ligne 1 : dimensions du tenseur, separees par des espaces (ex: "16 32")
-  ligne 2 : toutes les valeurs, aplaties en ordre row-major, separees par des espaces
-"""
-
 import json
 from pathlib import Path
 
