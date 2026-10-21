@@ -33,7 +33,7 @@ int main() {
     load_matrix<IN_CHANNELS, IMAGE_SIZE * IMAGE_SIZE>(REF + "input_image.txt",        image);
     load_matrix<IMAGE_SIZE, IMAGE_SIZE>            (REF + "final_depth_output.txt",   ref);
 
-    // [AJOUT] conversion float -> data_t de l'image (quantification de l'entree)
+    
     for (int c = 0; c < IN_CHANNELS; ++c)
         for (int k = 0; k < IMAGE_SIZE * IMAGE_SIZE; ++k)
             image_q[c][k] = (data_t)image[c][k];
