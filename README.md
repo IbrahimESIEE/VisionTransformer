@@ -19,13 +19,16 @@ Deux architectures ont été développées : une version **itérative**, qui tie
 
 ### Block design Vivado
 
-![Block design Vivado](images/block_design.png)
+<img width="992" height="525" alt="Capture block design" src="https://github.com/user-attachments/assets/5fe9e79a-27c7-487c-b892-c18560a74da7" />
+
+
 
 L'accélérateur `vitis_top_0` est au centre. Ses trois accès mémoire sont regroupés par un SmartConnect, et le processeur du Zynq UltraScale+ leur ouvre l'accès à la mémoire DDR.
 
 ### Carte de profondeur obtenue sur la carte
 
-![Résultat sur la carte](images/resultat_profondeur.png)
+![Uploading Capture resultat.png…]()
+
 
 ## Chaîne de conception
 
